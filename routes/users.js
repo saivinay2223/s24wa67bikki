@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
-// Initialize value and total
 let value = 0;
 let total = 1;
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  value += 2;       // Increment value by 2
-  total += value;   // Add value to total
-  res.send(`Total is: ${total}`);  // Send response with the updated total
+  value += 2;       
+  total += value * 2; // Multiply value by 2 before adding to total
+  res.send(`Total is: ${total}`);  
 });
 
 module.exports = router;
